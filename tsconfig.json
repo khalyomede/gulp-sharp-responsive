@@ -1,0 +1,9 @@
+{
+	"compilerOptions": {
+		"strict": true,
+		"alwaysStrict": true,
+		"target": "ES5",
+		"esModuleInterop": true
+	},
+	"exclude": ["lib"]
+}
