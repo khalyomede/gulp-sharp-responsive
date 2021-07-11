@@ -15,7 +15,7 @@
 	},
 	"scripts": {
 		"build": "rollup --config && tsc --declaration --emitDeclarationOnly --declarationDir lib",
-		"release": "np"
+		"release": "np --no-tests"
 	},
 	"dependencies": {
 		"plugin-error": "^1.0.1",
