@@ -137,6 +137,7 @@ export default (options: IOptions): Transform => {
 					base: file.base,
 					contents: buffer,
 					path: filePath,
+					_cachedKey: file._cachedKey,
 				}));
 			}));
 		}
