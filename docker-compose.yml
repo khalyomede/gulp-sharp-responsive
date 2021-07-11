@@ -6,3 +6,10 @@ services:
     volumes:
       - .:/home/alpine
     working_dir: /home/alpine
+
+  app:
+    build: ./docker/app
+    tty: true
+    volumes:
+      - .:/home/alpine
+    working_dir: /home/alpine
