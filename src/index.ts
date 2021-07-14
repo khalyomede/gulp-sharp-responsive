@@ -116,7 +116,7 @@ export default (options: IOptions): Transform => {
 
 			// Processing width if it's an anonymous function
 			if (typeof option.width === "function") {
-				const fileSize = imageSize(file);
+				const fileSize = imageSize(file.contents);
 
 				if (fileSize.width === undefined) {
 					this.emit("error", getError(`${file.path}: image size computation failed.`));
