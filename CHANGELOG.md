@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Support for [gulp-cache](https://github.com/jgable/gulp-cache#one-to-many-caching) plugin (thanks [chenaski](https://github.com/chenaski)).
 
-## [1.0.0] - 2017-06-20
+## [0.1.0] - 2021-04-18
 
 ### Added
 
