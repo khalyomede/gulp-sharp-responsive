@@ -83,6 +83,7 @@ Note that if you are using typescript, don't forget to add the "esModuleInterop"
 - [3. Include the original file in the output images](#3-include-the-original-file-in-the-output-images)
 - [4. Pass format specific options](#4-pass-format-specific-options)
 - [5. Pass sharp specific options](#5-pass-sharp-specific-options)
+- [6. Use a callback to compute the width](#6-use-a-callback-to-compute-the-width)
 
 ### 1. Generate image of different sizes
 
@@ -181,10 +182,28 @@ const img = () => src("src/img/**/*.{jpg,png}")
 
 Find all the available options in the [Sharp constructor documentation](https://sharp.pixelplumbing.com/api-constructor#sharp).
 
+### 6. Use a callback to compute the width
+
+In this example, we will use the file metadata to compute the width dynamically.
+
+```typescript
+import { src, dest } from "gulp";
+import sharpResponsive from "gulp-sharp-responsive";
+
+const img = () => src("src/img/**/*.{jpg,png}")
+  .pipe(sharpResponsive({
+    formats: [
+      { width: (metadata) => metadata.width * 0.5 } // divides the original image width by 2
+    ]
+  }))
+  .pipe(dest("dist/img"));
+```
+
 ## Options
 
 - [formats](#formats)
 - [includeOriginalFile](#includeoriginalfile)
+- [IFileMetadata](#ifilemetadata)
 
 ### formats
 
@@ -193,7 +212,7 @@ A list of transformations to operate on the file.
 ```typescript
 format: [
   {
-    width: number,
+    width: number | ((metadata IFileMetadata) => number),
     format?: "jpeg" | "png" | "webp" | "gif" | "tiff" | "avif" | "heif",
     rename?: {
       dirname?: string,
@@ -236,4 +255,13 @@ Wether to include the original transformed file in the output or not. Default to
 
 ```typescript
 includeOriginalFile?: boolean,
+```
+
+### IFileMetadata
+
+```typescript
+interface IFileMetadata {
+  width: number;
+  height: number;
+}
 ```

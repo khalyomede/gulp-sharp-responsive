@@ -6,6 +6,7 @@ import rename from "rename";
 import Vinyl from "vinyl";
 import IOptions from "./IOptions";
 import IFormatOptions from "./IFormatOptions";
+import imageSize from "image-size";
 
 const getError = (error: string | Error): PluginError => new PluginError("gulp-sharp-responsive", error);
 
@@ -13,13 +14,13 @@ const getError = (error: string | Error): PluginError => new PluginError("gulp-s
  * @credits https://www.npmjs.com/package/file-extension Had to copy the source code because TS would not let me import it (no commonJS nor ES6 exports).
  */
 const getFileExtension = (path: string): string => {
-    let extension = (/[^./\\]*$/.exec(path) || [""])[0];
+	let extension = (/[^./\\]*$/.exec(path) || [""])[0];
 
 	if (extension === "jpg") {
 		extension = "jpeg";
 	}
 
-    return extension.toLowerCase();
+	return extension.toLowerCase();
 };
 
 const getFormat = (filePath: string, format?: FileFormat): string => {
@@ -111,8 +112,37 @@ export default (options: IOptions): Transform => {
 				continue;
 			}
 
+			let width = 0;
+
+			// Processing width if it's an anonymous function
+			if (typeof option.width === "function") {
+				const fileSize = imageSize(file.contents);
+
+				if (fileSize.width === undefined) {
+					this.emit("error", getError(`${file.path}: image size computation failed.`));
+
+					continue;
+				}
+
+				if (fileSize.height === undefined) {
+					this.emit("error", getError(`${file.path}: image size computation failed.`));
+
+					continue;
+				}
+
+				width = option.width({ width: fileSize.width, height: fileSize.height });
+
+				if (typeof width !== "number") {
+					this.emit("error", getError(`${file.path}: callback must return a number.`));
+
+					continue;
+				}
+			} else {
+				width = option.width;
+			}
+
 			let promise = sharp(file.contents, option.sharp !== undefined && option.sharp !== null && typeof option.sharp === "object" ? option.sharp : {})
-				.resize(option.width)
+				.resize(width)
 				// @ts-ignore FormatEnum from Sharp does not accepts strings, but documentation shows it accepts...
 				.toFormat(format);
 
