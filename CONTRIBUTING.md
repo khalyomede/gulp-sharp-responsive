@@ -17,6 +17,13 @@ You can give you help for:
 
 ## Steps to propose changes
 
+- [1. Choose an issue to resolve](#1-choose-an-issue-to-resolve)
+- [2. Fork the project](#2-fork-the-project)
+- [3. Create a branch](#3-create-a-branch)
+- [4. Test your feature or fix](#4-test-your-feature-or-fix)
+- [5. Commit your changes](#5-commit-your-changes)
+- [6. Propose your change](#6-propose-your-change)
+
 ### 1. Choose an issue to resolve
 
 Every pull request should be linked to an existing issue. If there is no issue yet for the problem you are solving, just create an issue before.
@@ -25,7 +32,7 @@ Every pull request should be linked to an existing issue. If there is no issue y
 
 In Github, click the button "fork". This will create a copy of this project in your own Github namespace.
 
-### 2. Create a branch
+### 3. Create a branch
 
 Creating a branch in your own forked project will help make this clearer and follow convention, or when you want to contribute multiple times for the project.
 
@@ -43,7 +50,7 @@ Create a new branch **from master**.
 git checkout master && git checkout -b 12-remove-unused-imports
 ```
 
-### 3. Test your feature/fix
+### 4. Test your feature or fix
 
 Run this command to test everything still works.
 
@@ -51,7 +58,7 @@ Run this command to test everything still works.
 npm run test
 ```
 
-### 4. Commit your changes
+### 5. Commit your changes
 
 Commit messages follow a convention too. One you are ready to commit some changes, use this naming convention:
 
@@ -67,7 +74,7 @@ The type of changes are the following:
 - fix: a patch
 - break: any of the above that would also break existing installation of this plugin
 
-### 5. Propose your change
+### 6. Propose your change
 
 Head on your github namespace project, and you should see a message to automatically create a PR by target the original project. Pull request must target the master branch.
 
