@@ -67,7 +67,7 @@ The type of changes are the following:
 - fix: a patch
 - break: any of the above that would also break existing installation of this plugin
 
-### Propose your change
+### 5. Propose your change
 
 Head on your github namespace project, and you should see a message to automatically create a PR by target the original project. Pull request must target the master branch.
 
