@@ -43,7 +43,15 @@ Create a new branch **from master**.
 git checkout master && git checkout -b 12-remove-unused-imports
 ```
 
-### 3. Commit your changes
+### 3. Test your feature/fix
+
+Run this command to test everything still works.
+
+```bash
+npm run test
+```
+
+### 4. Commit your changes
 
 Commit messages follow a convention too. One you are ready to commit some changes, use this naming convention:
 

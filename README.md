@@ -9,6 +9,7 @@ A gulp plugin to generate responsives images.
 - [Installation](#installation)
 - [Examples](#examples)
 - [Options](#options)
+- [Test](#test)
 
 ## About
 
@@ -264,4 +265,10 @@ interface IFileMetadata {
   width: number;
   height: number;
 }
+```
+
+## Test
+
+```bash
+npm run test
 ```
