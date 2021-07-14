@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Ability to specify width option as a callback to compute the width from the file metadata (thanks [chenaski](https://github.com/chenaski)).
+
 ## [0.2.0] - 2021-07-11
 
 ### Added

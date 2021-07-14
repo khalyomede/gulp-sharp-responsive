@@ -1,10 +1,11 @@
 import { Specification } from "rename";
 import { SharpOptions, AvifOptions, GifOptions, HeifOptions, JpegOptions, PngOptions, TiffOptions, WebpOptions } from "sharp";
+import IFileMetadata from "./IFileMetadata";
 export default interface IFormatOptions {
     /**
      * Resizes the image to the given width. The height will be updated according to the image proportion (no deformations).
      */
-    width: number;
+    width: number | ((metadata: IFileMetadata) => number);
     /**
      * Options to rename your image.
      *

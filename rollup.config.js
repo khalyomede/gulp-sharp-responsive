@@ -18,5 +18,6 @@ export default {
 		"fancy-log",
 		"vinyl",
 		"path",
+		"image-size",
 	],
 };
