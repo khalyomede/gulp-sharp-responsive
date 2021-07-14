@@ -2,6 +2,8 @@
 
 A gulp plugin to generate responsives images.
 
+[![Build Status](https://travis-ci.com/khalyomede/gulp-sharp-responsive.svg?branch=master)](https://travis-ci.com/khalyomede/gulp-sharp-responsive) [![npm](https://img.shields.io/npm/v/gulp-sharp-responsive)](https://www.npmjs.com/package/gulp-sharp-responsive) ![NPM](https://img.shields.io/npm/l/gulp-sharp-responsive)
+
 ## Summary
 
 - [About](#about)
