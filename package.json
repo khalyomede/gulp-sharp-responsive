@@ -35,7 +35,7 @@
 		"vinyl": "^2.2.1"
 	},
 	"name": "gulp-sharp-responsive",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"main": "lib/index.js",
 	"directories": {
 		"lib": "lib",
