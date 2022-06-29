@@ -1,15 +1,15 @@
 version: "3"
 services:
   npm:
-    image: node:15-alpine
+    build: ./docker/node/18
     entrypoint: npm
     volumes:
-      - .:/home/alpine
-    working_dir: /home/alpine
+      - .:/home/ubuntu/app
+    working_dir: /home/ubuntu/app
 
   app:
-    build: ./docker/app
+    build: ./docker/node/18
     tty: true
     volumes:
-      - .:/home/alpine
-    working_dir: /home/alpine
+      - .:/home/ubuntu/app
+    working_dir: /home/ubuntu/app

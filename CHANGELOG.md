@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- "sharp" and "image-size" dependencies updated to their latest version.
+
 ## [0.3.0] - 2021-07-14
 
 ### Added
