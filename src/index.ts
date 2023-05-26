@@ -142,6 +142,7 @@ export default (options: IOptions): Transform => {
 			}
 
 			let promise = sharp(file.contents, option.sharp !== undefined && option.sharp !== null && typeof option.sharp === "object" ? option.sharp : {})
+				.rotate()
 				.resize(width)
 				// @ts-ignore FormatEnum from Sharp does not accepts strings, but documentation shows it accepts...
 				.toFormat(format);
