@@ -274,3 +274,12 @@ interface IFileMetadata {
 ```bash
 npm run test
 ```
+
+## Publish
+
+First make sure the version in `package.json` is the version to publish.
+
+```bash
+npm login
+npm publish
+```
