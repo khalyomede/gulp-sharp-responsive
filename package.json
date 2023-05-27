@@ -16,14 +16,12 @@
 		"glob-promise": "^4.2.0",
 		"gulp": "^4.0.2",
 		"mocha": "^9.0.2",
-		"np": "^7.5.0",
 		"rollup": "^2.45.2",
 		"ts-node": "^10.1.0",
 		"typescript": "^4.2.4"
 	},
 	"scripts": {
 		"build": "rollup --config && tsc --declaration --emitDeclarationOnly --declarationDir lib",
-		"release": "np",
 		"test": "mocha --require ts-node/register test/*.ts"
 	},
 	"dependencies": {
