@@ -68,7 +68,7 @@ import sharpResponsive from "gulp-sharp-responsive";
 
 // becomes this
 const { src, dest } = require("gulp");
-const sharpResponsive = require("sharp-responsive");
+const sharpResponsive = require("gulp-sharp-responsive");
 ```
 
 Note that if you are using typescript, don't forget to add the "esModuleInterop" option to true in you `tsconfig.json` in order for the ES6 syntax mentioned above to work.
