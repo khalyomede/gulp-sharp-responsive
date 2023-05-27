@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.1] - 2023-05-27
+
+### Fixed
+
+- Bug when image rotation is not preserved after resizing it ([#10](https://github.com/khalyomede/gulp-sharp-responsive/issues/10)).
+
 ## [0.4.0]
 
 ### Added
